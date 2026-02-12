@@ -1,0 +1,23 @@
+---
+
+import type { Post } from '#pods/post-collection/post-collection.model';
+
+interface Props {
+    postEntry: Post;
+}
+
+const { postEntry } = Astro.props;
+
+const likeCount = 6;
+
+const postContent = {
+    backButton: 'Go back',
+    published: 'Published',
+    minRead: 'min read'
+};
+---
+
+<section class="flex shrink-1 grow flex-col gap-12 px-6 py-4">
+    <div>{postEntry.title}</div>
+    <div>{postEntry.content}</div>
+</section>
