@@ -1,12 +1,24 @@
 ---
 import ShapeOval from '#assets/shapes/oval.svg';
 import ShapeRectangle from '#assets/shapes/rectangle.svg';
+import type {MiniBio} from '../mini-bio.model';
+
+interface Props {
+  content: MiniBio
+}
+
+const {content} = Astro.props;
 ---
 
 <section
   class="bg-primary-50 dark:bg-primary-100 relative hidden overflow-clip rounded-2xl p-6 lg:block"
   aria-labelledby="about-me-aside-heading"
 >
+
+  <div class="relative z-10 flex flex-col items-center justify-center gap-6">
+    <h2 class="font-geist w-full font-bold" id="about-me-aside-heading">{content.title}</h2>
+  </div>
+
   <!-- Decorative shapes -->
   <div class="text-primary-500/25 absolute top-[-48%] left-[-30%] h-[243px] w-[420px]" aria-hidden="true">
     <ShapeRectangle />
