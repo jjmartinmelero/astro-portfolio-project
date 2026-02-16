@@ -1,14 +1,13 @@
 ---
 import HeartIcon from '#assets/icons/heart.svg';
 import type { Post } from '../post-collection.model';
- 
+
 interface Props {
   post: Post;
 }
 const { post } = Astro.props;
 const readTimeLabel = 'min read';
 ---
-
 
 <a
   href={`/posts/${post.slug}`}
@@ -36,12 +35,13 @@ const readTimeLabel = 'min read';
         </time>
         <h3
           class="group-hover:text-primary-700 text-tbase-500/90 mb-2 text-xl font-bold transition-colors duration-300"
+          transition:name={`${post.title}-title`}
         >
           {post.title}
         </h3>
         <p class="text-sm">{post.summary}</p>
       </div>
- 
+
       <div class="flex items-center gap-4">
         <span class="text-xs">{post.readTime} {readTimeLabel}</span>
         <div class="flex items-center gap-1">
